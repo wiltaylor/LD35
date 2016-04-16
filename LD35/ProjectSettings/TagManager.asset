@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - LevelGeom
+  - EnamyAI
+  - Interactable
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Level
+    uniqueID: 1494764171
+    locked: 0
+  - name: Actors
+    uniqueID: 4102483083
+    locked: 0
+  - name: Interactable
+    uniqueID: 1654498803
     locked: 0
