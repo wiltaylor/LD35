@@ -34,6 +34,54 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &124786
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 447412}
+  - 114: {fileID: 11479378}
+  m_Layer: 0
+  m_Name: Level3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &125724
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 468512}
+  - 114: {fileID: 11457410}
+  m_Layer: 0
+  m_Name: Level1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &148672
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 406240}
+  - 114: {fileID: 11411858}
+  m_Layer: 0
+  m_Name: Level2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &181132
 GameObject:
   m_ObjectHideFlags: 1
@@ -78,6 +126,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449624}
   m_RootOrder: 0
+--- !u!4 &406240
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 2
+--- !u!4 &447412
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 3
 --- !u!4 &449624
 Transform:
   m_ObjectHideFlags: 1
@@ -89,7 +161,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404892}
+  - {fileID: 468512}
+  - {fileID: 406240}
+  - {fileID: 447412}
   m_Father: {fileID: 471148}
+  m_RootOrder: 1
+--- !u!4 &468512
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
   m_RootOrder: 1
 --- !u!4 &471148
 Transform:
@@ -98,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10000, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494760}
@@ -169,7 +256,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -191,7 +278,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &11410766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,6 +292,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Main
   Tracks: []
+--- !u!114 &11411858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 2
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 1000
+  MinBlocks: 20
+  EntityTypes: []
+  MaxEntityQty: 
+  MinEntityQty: 
 --- !u!114 &11427192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,10 +324,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Level: 0
-  LevelFile: level_town
+  LevelFile: level-town
   Name: Town
   Type: 1
   Blocks: 0
+  MinBlocks: 0
   EntityTypes: []
   MaxEntityQty: 
   MinEntityQty: 
@@ -235,6 +343,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0197401f85721ed438e446591c168566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxRoomAxis: 50
+  LevelBlockPrefab: {fileID: 176278, guid: a5d0f300d77c4964daff68720e4305c2, type: 2}
+  Prefabs: {fileID: 11489794, guid: 3193d60cd133b1b438e3c1e4034c9a40, type: 2}
+  TileSet: {fileID: 11440364, guid: 3692b83c055d58640aeaf837c8ba710c, type: 2}
+  RoomWidth: 5
+  TileWidth: 0.32
+  CurrentLevel: 0
+  PlayerPrefab: {fileID: 129840, guid: 54082fa078a7c2940944a58cbec3f15e, type: 2}
+  GoingDown: 0
+  MaxItemsPerBlock: 5
 --- !u!114 &11454536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +365,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioController: {fileID: 0}
+--- !u!114 &11457410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 1000
+  MinBlocks: 20
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 14000000
+  MinEntityQty: 0a000000
 --- !u!114 &11464738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,6 +400,26 @@ MonoBehaviour:
   Mixer: {fileID: 24100000, guid: 4e4e4a9911c73394daa6eb859448f009, type: 2}
   MusicSource: {fileID: 8263128}
   StartPlayList: Main
+--- !u!114 &11479378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 3
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 1000
+  MinBlocks: 20
+  EntityTypes: []
+  MaxEntityQty: 
+  MinEntityQty: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

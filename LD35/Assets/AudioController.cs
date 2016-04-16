@@ -12,6 +12,7 @@ public class AudioController : MonoBehaviour
     private MusicPlaylist[] _playlists;
     private MusicPlaylist _currentPlayList;
     private AudioClip _currentTrack;
+    
     void Start()
     {
         _playlists = GetComponents<MusicPlaylist>();

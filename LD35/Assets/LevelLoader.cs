@@ -1,11 +1,6 @@
-﻿using System;
-using UnityEngine;
-using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using Mono.Cecil;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class LevelLoader : MonoBehaviour
@@ -18,17 +13,16 @@ public class LevelLoader : MonoBehaviour
     public float TileWidth = 0.32f;
     public int CurrentLevel = 0;
     public GameObject PlayerPrefab;
+    public bool GoingDown;
+
+    public int MaxItemsPerBlock = 5;
 
     private List<GameObject> _placedBlocks = new List<GameObject>();
     private Vector3 _entryStartPosition = Vector3.zero;
     private Vector3 _exitStartPosition = Vector3.zero;
+    private GameObject _playerObj;
 
-    private enum RoomSpecial
-    {
-        None,
-        Entry,
-        Exit
-    }
+    private bool _delayLoadPlayer;
 
     private struct BlockInfo
     {
@@ -37,44 +31,46 @@ public class LevelLoader : MonoBehaviour
         public bool Down;
         public bool Left;
         public bool Right;
-        public RoomSpecial Special;
+        public List<GameObject> ObjectToPlace;
+    }
+
+    public void OnLevelWasLoaded(int level)
+    {
+        CreateLevel(CurrentLevel);
     }
 
     public void Start()
     {
-        GoDownLevel();
-    }
-
-    public void GoUpLevel()
-    {
-        if (CurrentLevel == 0)
-            return;
-
-        CurrentLevel--;
-
+        GoingDown = true;
         CreateLevel(CurrentLevel);
-        SpawnPlayer(_exitStartPosition);
-    }
-
-    public void GoDownLevel()
-    {
-        CurrentLevel++;
-
-        CreateLevel(CurrentLevel);
-        SpawnPlayer(_entryStartPosition);
     }
 
     private void SpawnPlayer(Vector3 position)
     {
         var player = Instantiate(PlayerPrefab);
-        player.transform.position = position;
+        player.transform.position = new Vector3(position.x, position.y - TileWidth, 0);
         player.SetActive(true);
+        _playerObj = player;
     }
 
     public void DestroyLevel()
     {
-        foreach(var block in _placedBlocks)
+        DestroyObject(_playerObj);
+
+        foreach (var block in _placedBlocks)
             DestroyObject(block);
+    }
+
+    public void Update()
+    {
+        if (!_delayLoadPlayer)
+            return;
+
+        var playerspawn = GameObject.FindGameObjectWithTag("PlayerSpawn");
+        if (playerspawn == null) return;
+
+        SpawnPlayer(playerspawn.transform.position);
+        _delayLoadPlayer = false;
     }
 
     public void CreateLevel(int level)
@@ -87,24 +83,36 @@ public class LevelLoader : MonoBehaviour
             {
                 if (l.Type == LevelInfo.LevelType.Random)
                 {
+                    if (SceneManager.GetActiveScene().name != "Blank")
+                    {
+                        SceneManager.LoadScene("Blank");
+                        return;
+                    }
+
                     var blocks = 0;
                     while (blocks < l.MinBlocks)
                     {
                         DestroyLevel();
-                        RandomLevel(l);
+                        blocks = RandomLevel(l);
                     }
-                    
+
+                    SpawnPlayer(GoingDown ? _entryStartPosition : _exitStartPosition);
+
                     return;
                 }
 
                 if (l.Type == LevelInfo.LevelType.Static)
                 {
-                    //todo
+                    if (SceneManager.GetActiveScene().name != l.LevelFile)
+                    {
+                        SceneManager.LoadScene(l.LevelFile);
+                        return;
+                    }
+
+                    _delayLoadPlayer = true;
                 }
             }
         }
-
-        CreateLevel(1);
     }
 
     private int RandomLevel(LevelInfo level)
@@ -113,10 +121,26 @@ public class LevelLoader : MonoBehaviour
         var currentx = Random.Range(0, MaxRoomAxis);
         var currenty = Random.Range(0, MaxRoomAxis);
 
+        var placementQueue = new Queue<GameObject>();
+        var itemslots = 0;
+
         var blocksleft = level.Blocks;
 
         var placedblocks = 0;
 
+        placementQueue.Enqueue(Prefabs.StairsDown);
+        placementQueue.Enqueue(Prefabs.StairsUp);
+
+        for (var index = 0; index < level.EntityTypes.Length; index++)
+        {
+            var qty = Random.Range(level.MinEntityQty[index], level.MaxEntityQty[index]);
+
+            for (var i = 0; i < qty; i++)
+            {
+                placementQueue.Enqueue(level.EntityTypes[index]);
+            }
+        }
+        
         while (blocksleft > 0)
         {
             blocksleft--;
@@ -145,7 +169,7 @@ public class LevelLoader : MonoBehaviour
             }
 
             levelmatrix[currentx, currenty].RoomSet = true;
-            levelmatrix[currentx, currenty].Special = RoomSpecial.None;
+            levelmatrix[currentx, currenty].ObjectToPlace = new List<GameObject>();
             levelmatrix[currentx, currenty].Up = (up == 1);
             levelmatrix[currentx, currenty].Down = (down == 1);
             levelmatrix[currentx, currenty].Left = (left == 1);
@@ -257,23 +281,31 @@ public class LevelLoader : MonoBehaviour
             }
         }
 
-        var roomtype = RoomSpecial.Entry;
+        itemslots = placedblocks * MaxItemsPerBlock;
 
-        while (true)
+        if (itemslots < placementQueue.Count)
+            return -1;
+
+        while (placementQueue.Count > 0)
         {
             var x = Random.Range(0, MaxRoomAxis);
             var y = Random.Range(0, MaxRoomAxis);
 
-            if (!levelmatrix[x, y].RoomSet || levelmatrix[x, y].Special != RoomSpecial.None) continue;
+            if (!levelmatrix[x, y].RoomSet)
+                continue;
 
-            levelmatrix[x, y].Special = roomtype;
+            if(levelmatrix[x, y].ObjectToPlace.Count >= MaxItemsPerBlock)
+                continue;
+            
+            if(placementQueue.Peek() == Prefabs.StairsDown && levelmatrix[x, y].ObjectToPlace.Count != 0)
+                continue;
 
-            if (roomtype == RoomSpecial.Entry)
-                roomtype = RoomSpecial.Exit;
-            else
-                break;
+            if (placementQueue.Peek() == Prefabs.StairsUp && levelmatrix[x, y].ObjectToPlace.Count != 0)
+                continue;
+
+
+            levelmatrix[x, y].ObjectToPlace.Add(placementQueue.Dequeue());
         }
-
 
         for (var x = 0; x < MaxRoomAxis; x++)
         {
@@ -300,24 +332,53 @@ public class LevelLoader : MonoBehaviour
 
                     controller.GenerateBlock();
 
-                    if (levelmatrix[x, y].Special == RoomSpecial.Entry)
+                    //Middle object
+                    if (levelmatrix[x, y].ObjectToPlace.Count >= 1)
                     {
-                        var special = Instantiate(Prefabs.StairsUp);
-                        special.transform.SetParent(controller.transform);
-                        special.transform.localPosition = new Vector3(TileWidth * RoomWidth /2 , TileWidth * RoomWidth / 2, 0);
-                        special.SetActive(true);
-                        _entryStartPosition = special.transform.position;
+                        var obj = Instantiate(levelmatrix[x, y].ObjectToPlace[0]);
+                        obj.transform.SetParent(controller.transform);
+                        obj.transform.localPosition = new Vector3(TileWidth * 2, TileWidth * 2, 0);
+                        obj.SetActive(true);
+
+                        if (levelmatrix[x, y].ObjectToPlace[0] == Prefabs.StairsDown)
+                            _exitStartPosition = obj.transform.position;
+
+                        if (levelmatrix[x, y].ObjectToPlace[0] == Prefabs.StairsUp)
+                            _entryStartPosition = obj.transform.position;
+
                     }
 
-                    if (levelmatrix[x, y].Special == RoomSpecial.Exit)
+                    if (levelmatrix[x, y].ObjectToPlace.Count >= 2)
                     {
-                        var special = Instantiate(Prefabs.StairsDown);
-                        special.transform.SetParent(controller.transform);
-                        special.transform.localPosition = new Vector3(TileWidth * RoomWidth / 2, TileWidth * RoomWidth / 2, 0);
-                        special.SetActive(true);
-                        _exitStartPosition = special.transform.position;
+                        var obj = Instantiate(levelmatrix[x, y].ObjectToPlace[1]);
+                        obj.transform.SetParent(controller.transform);
+                        obj.transform.localPosition = new Vector3(TileWidth * 1, TileWidth * 1, 0);
+                        obj.SetActive(true);
                     }
 
+                    if (levelmatrix[x, y].ObjectToPlace.Count >= 3)
+                    {
+                        var obj = Instantiate(levelmatrix[x, y].ObjectToPlace[2]);
+                        obj.transform.SetParent(controller.transform);
+                        obj.transform.localPosition = new Vector3(TileWidth * 3, TileWidth * 1, 0);
+                        obj.SetActive(true);
+                    }
+
+                    if (levelmatrix[x, y].ObjectToPlace.Count >= 4)
+                    {
+                        var obj = Instantiate(levelmatrix[x, y].ObjectToPlace[3]);
+                        obj.transform.SetParent(controller.transform);
+                        obj.transform.localPosition = new Vector3(TileWidth * 3, TileWidth * 3, 0);
+                        obj.SetActive(true);
+                    }
+
+                    if (levelmatrix[x, y].ObjectToPlace.Count >= 5)
+                    {
+                        var obj = Instantiate(levelmatrix[x, y].ObjectToPlace[3]);
+                        obj.transform.SetParent(controller.transform);
+                        obj.transform.localPosition = new Vector3(TileWidth * 1, TileWidth * 3, 0);
+                        obj.SetActive(true);
+                    }
                 }
             }
         }

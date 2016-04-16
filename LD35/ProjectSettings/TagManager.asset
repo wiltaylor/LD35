@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Actor
+  - Level
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX
@@ -17,10 +20,10 @@ TagManager:
   - LevelGeom
   - EnamyAI
   - Interactable
-  - 
-  - 
-  - 
-  - 
+  - PlayerProjectile
+  - AIProjectile
+  - BothProjectile
+  - AIBeacon
   - 
   - 
   - 
@@ -44,9 +47,12 @@ TagManager:
   - name: Level
     uniqueID: 1494764171
     locked: 0
-  - name: Actors
-    uniqueID: 4102483083
-    locked: 0
   - name: Interactable
     uniqueID: 1654498803
+    locked: 0
+  - name: Projectile
+    uniqueID: 3018263801
+    locked: 0
+  - name: Actors
+    uniqueID: 4102483083
     locked: 0

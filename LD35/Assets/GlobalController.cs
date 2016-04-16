@@ -20,6 +20,8 @@ public class GlobalController : MonoBehaviour
         Instance = this;
 
         AudioController = GetSubItem<AudioController>();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     T GetSubItem<T>()
