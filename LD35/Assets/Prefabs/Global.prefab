@@ -552,7 +552,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Main
-  Tracks: []
+  Tracks:
+  - {fileID: 8300000, guid: b8045de2288293c40ab0ea6632952c9f, type: 3}
 --- !u!114 &11415940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -568,12 +569,19 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
-  MinBlocks: 20
+  Blocks: 900
+  MinBlocks: 30
   EntityTypes:
-  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 177390, guid: e1a7395ad6792894ca284567a18aa2de, type: 2}
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 170464, guid: c350bd26917aa1d439a304271b18f771, type: 2}
+  - {fileID: 122722, guid: 358283e5a46e79d4981982523f0e19c4, type: 2}
+  - {fileID: 127928, guid: 93ea7b0e0c8bebc48b20c690483601bc, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 46000000020000001a0000001400000014000000050000009600000096000000
+  MinEntityQty: 3c00000001000000140000000f0000000f000000010000007800000078000000
 --- !u!114 &11417776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,12 +597,19 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
+  Blocks: 600
   MinBlocks: 20
   EntityTypes:
-  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 177390, guid: e1a7395ad6792894ca284567a18aa2de, type: 2}
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 170464, guid: c350bd26917aa1d439a304271b18f771, type: 2}
+  - {fileID: 102100, guid: f050570b985341c408884a0b6b421b34, type: 2}
+  - {fileID: 122722, guid: 358283e5a46e79d4981982523f0e19c4, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 3200000002000000120000000a0000000d000000020000006400000064000000
+  MinEntityQty: 28000000010000000c0000000800000008000000010000005a0000005a000000
 --- !u!114 &11422258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,12 +625,17 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
-  MinBlocks: 20
+  Blocks: 50
+  MinBlocks: 30
   EntityTypes:
   - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 157282, guid: 254244285f0e493409fbc984fdade1b2, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 140000000100000008000000050000002800000028000000
+  MinEntityQty: 0a0000000100000005000000030000001400000014000000
 --- !u!114 &11427192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,12 +671,19 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
-  MinBlocks: 20
+  Blocks: 100
+  MinBlocks: 30
   EntityTypes:
   - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 177390, guid: e1a7395ad6792894ca284567a18aa2de, type: 2}
+  - {fileID: 157282, guid: 254244285f0e493409fbc984fdade1b2, type: 2}
+  - {fileID: 102100, guid: f050570b985341c408884a0b6b421b34, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 1400000001000000080000000800000007000000010000003c0000003c000000
+  MinEntityQty: 1400000001000000060000000500000004000000000000001e0000001e000000
 --- !u!114 &11431600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -672,12 +699,18 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
+  Blocks: 700
   MinBlocks: 20
   EntityTypes:
-  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 177390, guid: e1a7395ad6792894ca284567a18aa2de, type: 2}
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 170464, guid: c350bd26917aa1d439a304271b18f771, type: 2}
+  - {fileID: 122722, guid: 358283e5a46e79d4981982523f0e19c4, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 3c00000002000000190000000f0000000f0000006e0000006e000000
+  MinEntityQty: 0500000001000000140000000a0000000a0000006400000064000000
 --- !u!114 &11432222
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -736,12 +769,18 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
+  Blocks: 200
   MinBlocks: 20
   EntityTypes:
   - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 177390, guid: e1a7395ad6792894ca284567a18aa2de, type: 2}
+  - {fileID: 102100, guid: f050570b985341c408884a0b6b421b34, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 1e000000010000000a0000000a000000050000004600000046000000
+  MinEntityQty: 14000000010000000600000008000000030000003c0000003c000000
 --- !u!114 &11454536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -769,12 +808,15 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
+  Blocks: 1000
   MinBlocks: 20
   EntityTypes:
-  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 170464, guid: c350bd26917aa1d439a304271b18f771, type: 2}
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 127928, guid: 93ea7b0e0c8bebc48b20c690483601bc, type: 2}
+  MaxEntityQty: 64000000030000001e00000014000000
+  MinEntityQty: 5000000003000000140000000a000000
 --- !u!114 &11464738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -804,12 +846,17 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 20
+  Blocks: 300
   MinBlocks: 20
   EntityTypes:
-  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 177390, guid: e1a7395ad6792894ca284567a18aa2de, type: 2}
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 102100, guid: f050570b985341c408884a0b6b421b34, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 28000000010000000f0000000a0000005000000050000000
+  MinEntityQty: 1e000000010000000a000000070000004600000046000000
 --- !u!114 &11484094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -828,10 +875,11 @@ MonoBehaviour:
   HPRank: 0
   SpeedModifier: 1
   DamageModifier: 1
-  HPModifier: 1
+  HPMax: 0
   HPRechargeRate: 0
   DirtyData: 0
   LowestLevelVisited: 0
+  CompletedChatBoxes: []
 --- !u!114 &11491008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -845,25 +893,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DMGUpgradeCosts: 000000008813000010270000204e000030750000
   DMGUpgradeModifier:
-  - 1
-  - 1.2
-  - 1.5
-  - 2
-  - 2.5
+  - 5
+  - 10
+  - 15
+  - 20
+  - 25
   SpeedUpgradeCosts: 00000000e80300008813000010270000204e0000
   SpeedUpgradeModifier:
   - 1
-  - 1.5
-  - 1.75
-  - 2
-  - 3
+  - 1.1
+  - 1.2
+  - 1.3
+  - 1.4
   HPUpgradeCosts: 00000000e80300008813000010270000204e0000
   HPUpgradeModifier:
-  - 1
-  - 1.5
-  - 2
-  - 2.5
-  - 3
+  - 100
+  - 200
+  - 300
+  - 400
+  - 500
   HPRegenRate:
   - 0
   - 0
@@ -889,8 +937,13 @@ MonoBehaviour:
   MinBlocks: 20
   EntityTypes:
   - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 0a000000
-  MinEntityQty: 05000000
+  - {fileID: 192132, guid: eb765738abf29ef419b494cffa601477, type: 2}
+  - {fileID: 185040, guid: e07b44038be3c4e44bd747359553e398, type: 2}
+  - {fileID: 157282, guid: 254244285f0e493409fbc984fdade1b2, type: 2}
+  - {fileID: 138102, guid: b410c2fa22a6c65459d4452361cf3acb, type: 2}
+  - {fileID: 131094, guid: 38a66010e50e59947b83257a011f3c77, type: 2}
+  MaxEntityQty: 0a0000000100000005000000050000001e0000001e000000
+  MinEntityQty: 050000000100000003000000030000000a0000000a000000
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

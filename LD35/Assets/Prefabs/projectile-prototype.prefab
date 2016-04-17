@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11480022}
   - 61: {fileID: 6181930}
   - 50: {fileID: 5022522}
+  - 95: {fileID: 9574272}
   m_Layer: 12
   m_Name: projectile-prototype
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149394}
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -62,6 +63,23 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
+--- !u!95 &9574272
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149394}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e24d779e09eeef742ac22a0a6ffd61a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11480022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -77,6 +95,7 @@ MonoBehaviour:
   Dmg: 10
   Speed: 5
   Direction: {x: 0, y: 0, z: 0}
+  CreationOffset: 0.16
 --- !u!212 &21224810
 SpriteRenderer:
   m_ObjectHideFlags: 1

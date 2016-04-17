@@ -7,6 +7,7 @@ public class ProjectileController : MonoBehaviour
     public float Dmg = 10f;
     public float Speed = 10f;
     public Vector3 Direction;
+    public float CreationOffset = 0.32f;
 
     private Rigidbody2D _rigidbody;
     private PlayerPersistData _playerPersistData;
@@ -15,6 +16,21 @@ public class ProjectileController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerPersistData = GlobalController.Instance.GetComponentInChildren<PlayerPersistData>();
+
+        if(Direction == Vector3.zero)
+            Direction = Vector3.down;
+
+        if(Direction == Vector3.down)
+            transform.position = new Vector3(transform.position.x, transform.position.y - CreationOffset, transform.position.z);
+
+        if (Direction == Vector3.up)
+            transform.position = new Vector3(transform.position.x, transform.position.y + CreationOffset, transform.position.z);
+
+        if (Direction == Vector3.left)
+            transform.position = new Vector3(transform.position.x - CreationOffset, transform.position.y, transform.position.z);
+
+        if (Direction == Vector3.right)
+            transform.position = new Vector3(transform.position.x + CreationOffset, transform.position.y, transform.position.z);
     }
 
     public void Update()

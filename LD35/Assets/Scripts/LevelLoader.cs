@@ -55,6 +55,7 @@ public class LevelLoader : MonoBehaviour
         _playerPersistData.SpeedRank = 0;
 
         _playerPersistData.Gold = StartingGold;
+        _playerPersistData.DirtyData = true;
     }
 
     public void StartChatSession(string[] text, string avatarname, Sprite avatar)

@@ -10,7 +10,7 @@ public class PlayerPersistData : MonoBehaviour
     public int HPRank;
     public float SpeedModifier;
     public float DamageModifier;
-    public float HPModifier;
+    public float HPMax;
     public float HPRechargeRate;
     public bool DirtyData;
     public int LowestLevelVisited;

@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 
-public class PlayerControl : MonoBehaviour {
+public class PlayerControl : MonoBehaviour
+{
 
-
+    public AudioClip ShootSFX;
+    public AudioClip PlayerDie;
     public float PixelToUnits = 40f;
     public Camera Camera;
     public GameObject Projectile;
     public float MoveSpeed = 1f;
-    public float BaseDamage = 1f;
-    public float BaseHP = 50f;
     public float AttackCoolDown = 1f;
 
     [HideInInspector]
@@ -22,13 +22,15 @@ public class PlayerControl : MonoBehaviour {
     private PlayerPersistData _playerPersistData;
     private float _currentAttackCoolDown = 0f;
     private UpgradeTable _upgradeTable;
-
+    private SFXPlayer _sfxPlayer;
+    private bool _playedDeadSound;
 
     public void Start ()
     {
         _actorController = GetComponent<ActorController>();
         _playerPersistData = GlobalController.Instance.GetComponentInChildren<PlayerPersistData>();
         _upgradeTable = GlobalController.Instance.GetComponentInChildren<UpgradeTable>();
+        _sfxPlayer = GetComponent<SFXPlayer>();
     }
 
     public void OnContextEnter(GameObject obj)
@@ -45,11 +47,11 @@ public class PlayerControl : MonoBehaviour {
     public void RecalculateStats()
     {
         _playerPersistData.DamageModifier = _upgradeTable.DMGUpgradeModifier[_playerPersistData.DamageRank];
-        _playerPersistData.HPModifier = _upgradeTable.HPUpgradeModifier[_playerPersistData.HPRank];
+        _playerPersistData.HPMax = _upgradeTable.HPUpgradeModifier[_playerPersistData.HPRank];
         _playerPersistData.HPRechargeRate = _upgradeTable.HPRegenRate[_playerPersistData.HPRank];
         _playerPersistData.SpeedModifier = _upgradeTable.SpeedUpgradeModifier[_playerPersistData.SpeedRank];
 
-        _actorController.MaxHP = BaseHP*_playerPersistData.HPModifier;
+        _actorController.MaxHP = _playerPersistData.HPMax;
         _actorController.HP = _actorController.MaxHP;
 
         _actorController.HPRegenRate = _playerPersistData.HPRechargeRate;
@@ -65,6 +67,10 @@ public class PlayerControl : MonoBehaviour {
 
     public void Update ()
     {
+
+        if (_contextObject == null)
+            ContextText = "";
+
         _actorController.Speed = 0;
 
         if (_playerPersistData.DirtyData)
@@ -84,6 +90,12 @@ public class PlayerControl : MonoBehaviour {
         {
             _playerPersistData.GamePaused = true;
             GuiController.ShowGameOver();
+
+            if (!_playedDeadSound)
+            {
+                _playedDeadSound = true;
+                _sfxPlayer.PlaySFX(PlayerDie);
+            }
         }
 
         if (Input.GetButtonUp("Attack") && !_playerPersistData.GamePaused && _currentAttackCoolDown <= 0f)
@@ -92,10 +104,12 @@ public class PlayerControl : MonoBehaviour {
 	        var controller = obj.GetComponent<ProjectileController>();
 	        obj.transform.position = transform.position;
 	        controller.Direction = _direction;
-	        controller.Dmg = BaseDamage * _playerPersistData.DamageModifier;
+	        controller.Dmg = _playerPersistData.DamageModifier;
 	        _currentAttackCoolDown = AttackCoolDown;
+            _sfxPlayer.PlaySFX(ShootSFX);
 
-	    }
+
+        }
 
         if (Input.GetButtonUp("Use") && _contextObject != null && !_playerPersistData.GamePaused)
         {

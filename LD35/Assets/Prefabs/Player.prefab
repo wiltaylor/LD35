@@ -33,6 +33,8 @@ GameObject:
   - 61: {fileID: 6136448}
   - 114: {fileID: 11457530}
   - 95: {fileID: 9554140}
+  - 114: {fileID: 11431896}
+  - 82: {fileID: 8253324}
   m_Layer: 8
   m_Name: Player
   m_TagString: Actor
@@ -137,6 +139,81 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118310}
   m_Enabled: 1
+--- !u!82 &8253324
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129840}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24345484, guid: 4e4e4a9911c73394daa6eb859448f009,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!92 &9270130
 Behaviour:
   m_ObjectHideFlags: 1
@@ -172,11 +249,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daaf8520aec91894a877d1c539187fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShootSFX: {fileID: 8300000, guid: ddbbfdbb7bdb4f448bbe025b2cbd5027, type: 3}
+  PlayerDie: {fileID: 8300000, guid: b4571dd858ceb1b408311696f613560b, type: 3}
   PixelToUnits: 100
   Camera: {fileID: 2043328}
   Projectile: {fileID: 149394, guid: d6173716a6b7e6343b2d16da41b0bcd6, type: 2}
   MoveSpeed: 1.5
+  AttackCoolDown: 1
+  ContextText: 
   GuiController: {fileID: 0}
+--- !u!114 &11431896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d27b7e3768b45dd44a8edcad0a3b6d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Audio: {fileID: 8253324}
+  UpperPitch: 1.1
+  LowerPitch: 0.9
 --- !u!114 &11457530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,8 +291,12 @@ MonoBehaviour:
   HPRegenRate: 1
   IsPlayer: 1
   GoldOnKill: 0
+  DeathTimeout: 2
   Direction: 0
   Speed: 0
+  DieSound: {fileID: 0}
+  HitSound: {fileID: 8300000, guid: 93ce601594298be40aa9595eedb3ac4b, type: 3}
+  IsDead: 0
 --- !u!124 &12422978
 Behaviour:
   m_ObjectHideFlags: 1
