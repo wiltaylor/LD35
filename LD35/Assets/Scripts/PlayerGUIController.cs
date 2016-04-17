@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class PlayerGUIController : MonoBehaviour
@@ -14,6 +15,7 @@ public class PlayerGUIController : MonoBehaviour
     public GameObject GameMenuScreen;
     public GameObject GameShopScreen;
     public GameObject GameLevelSelectScreen;
+    public GameObject GameChatScreen;
 
     public Text SpeedText;
     public Text DamageText;
@@ -38,10 +40,43 @@ public class PlayerGUIController : MonoBehaviour
     public Button CloseLevelButton;
     public Button EntereanceButton;
 
+    public Text AvatarNameText;
+    public Image AvatarImage;
+    public Text ChatText;
+
+    [HideInInspector] public Queue<string> RemainingChatText = new Queue<string>();
+
     private LevelLoader _levelLoader;
     private PlayerPersistData _playerPersistData;
     private PlayerControl _playerControl;
     private UpgradeTable _upgradeTable;
+
+    public void ShowChat(string[] text, Sprite avatar, string avatarName)
+    {
+        AvatarNameText.text = avatarName;
+        AvatarImage.sprite = avatar;
+
+        RemainingChatText.Clear();
+
+        foreach (var line in text)
+            RemainingChatText.Enqueue(line);
+        
+        ChatText.text = RemainingChatText.Dequeue();
+
+        GameChatScreen.SetActive(true);
+    }
+
+    public void NextChatItem()
+    {
+        if (RemainingChatText.Count == 0)
+        {
+            _playerPersistData.GamePaused = false;
+            GameChatScreen.SetActive(false);
+            return;
+        }
+
+        ChatText.text = RemainingChatText.Dequeue();
+    }
 
     public void ShowGameOver()
     {

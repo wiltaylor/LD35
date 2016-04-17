@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerPersistData : MonoBehaviour
 {
@@ -13,4 +14,5 @@ public class PlayerPersistData : MonoBehaviour
     public float HPRechargeRate;
     public bool DirtyData;
     public int LowestLevelVisited;
+    public List<string> CompletedChatBoxes = new List<string>();
 }

@@ -27,7 +27,11 @@ public class ActorController : MonoBehaviour
     public void Update()
     {
         if (_playerPersistData.GamePaused)
+        {
+            _animator.SetFloat("Speed", 0f);
             return;
+        }
+            
 
         if (HP <= 0)
         {

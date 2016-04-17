@@ -7532,6 +7532,110 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 422912, guid: 9ae133e902651c747a9508bb5bb45d4c, type: 2}
   m_PrefabInternal: {fileID: 229842906}
+--- !u!1001 &2059127591
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11422552, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: Text.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 662.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 267.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22463670, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422552, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: Text.Array.data[0]
+      value: "I have finally done it! I have made it to the bottom of this cursed
+        dungeon. The relic is finally within my grasp\u2026."
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422552, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: Image
+      value: 
+      objectReference: {fileID: 21300014, guid: a42995543b4aa53418e7612d3217d60a,
+        type: 3}
+    - target: {fileID: 11422552, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: Name
+      value: EndText
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422552, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+      propertyPath: Speaker
+      value: You
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d56997c59d065a249ad99980f9e78343, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &2072212428 stripped
 Transform:
   m_PrefabParentObject: {fileID: 452048, guid: 738d07e3015415f4aa67f80875726513, type: 2}

@@ -57,6 +57,13 @@ public class LevelLoader : MonoBehaviour
         _playerPersistData.Gold = StartingGold;
     }
 
+    public void StartChatSession(string[] text, string avatarname, Sprite avatar)
+    {
+        _playerPersistData.GamePaused = true;
+        var controller = _playerUIObj.GetComponent<PlayerGUIController>();
+        controller.ShowChat(text, avatar, avatarname);
+    }
+
     public void OnLevelWasLoaded(int level)
     {
         if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Credits")
