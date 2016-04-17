@@ -10,26 +10,30 @@ public class ActorController : MonoBehaviour
     public float ManaRegenRate;
     public float HPRegenRate;
     public bool IsPlayer;
-    public int XPOnKill;
+    public int GoldOnKill;
 
     public int Direction;
     public float Speed;
 
     private Animator _animator;
+    private PlayerPersistData _playerPersistData;
 
     public void Start()
     {
         _animator = GetComponent<Animator>();
+        _playerPersistData = GlobalController.Instance.GetComponentInChildren<PlayerPersistData>();
     }
 
     public void Update()
     {
-        Debug.Log(string.Format("Speed: {0} Direction: {1}", Speed, Direction));
+        if (_playerPersistData.GamePaused)
+            return;
 
         if (HP <= 0)
         {
             if (!IsPlayer)
             {
+                _playerPersistData.Gold += GoldOnKill;
                 Destroy(gameObject);
                 return;
             }
@@ -47,9 +51,6 @@ public class ActorController : MonoBehaviour
 
         if (_animator == null)
             return;
-
-
-        
 
         _animator.SetFloat("Speed", Speed);
         _animator.SetInteger("Direction", Direction);

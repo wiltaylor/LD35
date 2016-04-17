@@ -13,14 +13,17 @@ public class LevelLoader : MonoBehaviour
     public float TileWidth = 0.32f;
     public int CurrentLevel = 0;
     public GameObject PlayerPrefab;
+    public GameObject PlayerGUIPrefab;
     public bool GoingDown;
 
     public int MaxItemsPerBlock = 5;
 
-    private List<GameObject> _placedBlocks = new List<GameObject>();
+    private readonly List<GameObject> _placedBlocks = new List<GameObject>();
     private Vector3 _entryStartPosition = Vector3.zero;
     private Vector3 _exitStartPosition = Vector3.zero;
     private GameObject _playerObj;
+    private GameObject _playerUIObj;
+    private PlayerPersistData _playerPersistData;
 
     private bool _delayLoadPlayer;
 
@@ -38,13 +41,24 @@ public class LevelLoader : MonoBehaviour
         public List<GameObject> ObjectToPlace;
     }
 
+    public void Respawn()
+    {
+        CurrentLevel = 0;
+        CreateLevel(0);
+    }
+
     public void OnLevelWasLoaded(int level)
     {
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Credits")
+            return;
+
         CreateLevel(CurrentLevel);
     }
 
     public void Start()
     {
+        _playerPersistData = GlobalController.Instance.GetComponentInChildren<PlayerPersistData>();
+             
         GoingDown = true;
         CreateLevel(CurrentLevel);
     }
@@ -55,11 +69,32 @@ public class LevelLoader : MonoBehaviour
         player.transform.position = new Vector3(position.x, position.y - TileWidth, 0);
         player.SetActive(true);
         _playerObj = player;
+
+        _playerUIObj = Instantiate(PlayerGUIPrefab);
+        _playerUIObj.GetComponent<PlayerGUIController>().PlayerActorController =
+            _playerObj.GetComponent<ActorController>();
+        _playerUIObj.SetActive(true);
+
+        player.GetComponent<PlayerControl>().GuiController = _playerUIObj.GetComponent<PlayerGUIController>();
+    }
+
+    public void OpenShop()
+    {
+        _playerPersistData.GamePaused = true;
+        _playerUIObj.GetComponent<PlayerGUIController>().ShowShop();
+    }
+
+    public void OpenLevelSelect()
+    {
+        _playerPersistData.GamePaused = true;
+        _playerUIObj.GetComponent<PlayerGUIController>().SHowLevelSelectScreen();
+
     }
 
     public void DestroyLevel()
     {
         DestroyObject(_playerObj);
+        DestroyObject(_playerUIObj);
 
         foreach (var block in _placedBlocks)
             DestroyObject(block);
@@ -79,6 +114,12 @@ public class LevelLoader : MonoBehaviour
 
     public void CreateLevel(int level)
     {
+        if (level > _playerPersistData.LowestLevelVisited)
+            _playerPersistData.LowestLevelVisited = level;
+
+        CurrentLevel = level;
+        _playerPersistData.GamePaused = false;
+
         var levelinfo = GetComponentsInChildren<LevelInfo>();
 
         foreach (var l in levelinfo)
@@ -89,6 +130,7 @@ public class LevelLoader : MonoBehaviour
                 {
                     if (SceneManager.GetActiveScene().name != "Blank")
                     {
+                        _placedBlocks.Clear();
                         SceneManager.LoadScene("Blank");
                         return;
                     }
@@ -109,6 +151,7 @@ public class LevelLoader : MonoBehaviour
                 {
                     if (SceneManager.GetActiveScene().name != l.LevelFile)
                     {
+                        _placedBlocks.Clear();
                         SceneManager.LoadScene(l.LevelFile);
                         return;
                     }

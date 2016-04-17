@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class MenuController : MonoBehaviour
         if (ExitConfirmationObject.activeInHierarchy)
             return;
 
-        Application.LoadLevel(NewGameLevel);
+        SceneManager.LoadScene(NewGameLevel);
     }
 
     public void OnHowToPlay()
@@ -67,6 +68,6 @@ public class MenuController : MonoBehaviour
 
     public void OnCredits()
     {
-        Application.LoadLevel("Credits");
+        SceneManager.LoadScene("Credits");
     }
 }

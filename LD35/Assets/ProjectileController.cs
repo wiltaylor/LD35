@@ -9,14 +9,22 @@ public class ProjectileController : MonoBehaviour
     public Vector3 Direction;
 
     private Rigidbody2D _rigidbody;
+    private PlayerPersistData _playerPersistData;
 
     public void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _playerPersistData = GlobalController.Instance.GetComponentInChildren<PlayerPersistData>();
     }
 
     public void Update()
     {
+        if (_playerPersistData.GamePaused)
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
+
         TimeToLive -= Time.deltaTime;
         if (TimeToLive <= 0)
         {

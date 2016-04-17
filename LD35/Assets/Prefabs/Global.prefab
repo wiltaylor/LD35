@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &106680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 479728}
+  - 114: {fileID: 11484094}
+  m_Layer: 0
+  m_Name: PlayerPersistData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &110494
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,6 +98,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &173354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 436388}
+  - 114: {fileID: 11491008}
+  m_Layer: 0
+  m_Name: UpgradeTable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &181132
 GameObject:
   m_ObjectHideFlags: 1
@@ -138,6 +170,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449624}
   m_RootOrder: 2
+--- !u!4 &436388
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 471148}
+  m_RootOrder: 3
 --- !u!4 &447412
 Transform:
   m_ObjectHideFlags: 1
@@ -190,8 +234,22 @@ Transform:
   m_Children:
   - {fileID: 494760}
   - {fileID: 449624}
+  - {fileID: 479728}
+  - {fileID: 436388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &479728
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 471148}
+  m_RootOrder: 2
 --- !u!4 &494760
 Transform:
   m_ObjectHideFlags: 1
@@ -351,6 +409,7 @@ MonoBehaviour:
   TileWidth: 0.32
   CurrentLevel: 0
   PlayerPrefab: {fileID: 129840, guid: 54082fa078a7c2940944a58cbec3f15e, type: 2}
+  PlayerGUIPrefab: {fileID: 100798, guid: 31e407a545ce40949b5df98a90f313dd, type: 2}
   GoingDown: 0
   MaxItemsPerBlock: 5
 --- !u!114 &11454536
@@ -380,12 +439,12 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 1000
+  Blocks: 20
   MinBlocks: 20
   EntityTypes:
   - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
-  MaxEntityQty: 14000000
-  MinEntityQty: 0a000000
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
 --- !u!114 &11464738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -420,6 +479,65 @@ MonoBehaviour:
   EntityTypes: []
   MaxEntityQty: 
   MinEntityQty: 
+--- !u!114 &11484094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3142f403461592649bdea5f6c629e357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gold: 0
+  GamePaused: 0
+  SpeedRank: 0
+  DamageRank: 0
+  HPRank: 0
+  SpeedModifier: 1
+  DamageModifier: 1
+  HPModifier: 1
+  HPRechargeRate: 0
+  DirtyData: 0
+--- !u!114 &11491008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e273ec3a5a198404a80acd0bc2230466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DMGUpgradeCosts: 000000008813000010270000204e000030750000
+  DMGUpgradeModifier:
+  - 1
+  - 1.2
+  - 1.5
+  - 2
+  - 2.5
+  SpeedUpgradeCosts: 00000000e80300008813000010270000204e0000
+  SpeedUpgradeModifier:
+  - 1
+  - 1.5
+  - 1.75
+  - 2
+  - 3
+  HPUpgradeCosts: 00000000e80300008813000010270000204e0000
+  HPUpgradeModifier:
+  - 1
+  - 1.5
+  - 2
+  - 2.5
+  - 3
+  HPRegenRate:
+  - 0
+  - 0
+  - 1
+  - 1.2
+  - 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class CreditController : MonoBehaviour
 {
@@ -78,6 +79,6 @@ public class CreditController : MonoBehaviour
 
     public void OnReturnToMenu()
     {
-        Application.LoadLevel("MainMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 }

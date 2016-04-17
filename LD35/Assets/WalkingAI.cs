@@ -10,43 +10,66 @@ public class WalkingAI : MonoBehaviour
 
     private GameObject target;
     private float _damagetimer = 0f;
+
+    private ActorController _actorController;
+    private PlayerPersistData _playerPersistData;
+
+    public void Start()
+    {
+        _actorController = GetComponent<ActorController>();
+        _playerPersistData = GlobalController.Instance.GetComponentInChildren<PlayerPersistData>();
+    }
 	
 	public void Update ()
 	{
-	    _damagetimer -= Time.deltaTime;
+        if (_playerPersistData.GamePaused)
+            return;
+
+        _damagetimer -= Time.deltaTime;
 
 	    if (_damagetimer < 0)
 	        _damagetimer = 0;
 
+	    _actorController.Speed = 0;
+
         if (target == null)
 	        return;
 
-	    var targetpos = target.transform.position;
-
-	    if (targetpos.x < transform.position.x)
-	    {
-	        transform.position = new Vector3(transform.position.x - Speed * Time.deltaTime, transform.position.y, transform.position.z);
-	    }
-
-        if (targetpos.x > transform.position.x)
-        {
-            transform.position = new Vector3(transform.position.x + Speed * Time.deltaTime, transform.position.y, transform.position.z);
-        }
-
+        var targetpos = target.transform.position;
+        
         if (targetpos.y < transform.position.y)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - Speed * Time.deltaTime, transform.position.z);
+            _actorController.Speed = Speed;
+            _actorController.Direction = 0;
         }
 
         if (targetpos.y > transform.position.y)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + Speed * Time.deltaTime, transform.position.z);
+            _actorController.Speed = Speed;
+            _actorController.Direction = 1;
+        }
+
+        if (targetpos.x < transform.position.x)
+        {
+            transform.position = new Vector3(transform.position.x - Speed * Time.deltaTime, transform.position.y, transform.position.z);
+            _actorController.Speed = Speed;
+            _actorController.Direction = 2;
+        }
+
+        if (targetpos.x > transform.position.x)
+        {
+            transform.position = new Vector3(transform.position.x + Speed * Time.deltaTime, transform.position.y, transform.position.z);
+
+            _actorController.Speed = Speed;
+            _actorController.Direction = 3;
         }
     }
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if (Math.Abs(_damagetimer) > -0.01f)
+        if (Math.Abs(_damagetimer) > -0f)
             return;
 
         _damagetimer = DamageTimeout;
