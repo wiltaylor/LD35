@@ -16,6 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &109058
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 413840}
+  - 114: {fileID: 11499176}
+  m_Layer: 0
+  m_Name: Level1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &110494
 GameObject:
   m_ObjectHideFlags: 0
@@ -50,22 +66,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &124786
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 447412}
-  - 114: {fileID: 11479378}
-  m_Layer: 0
-  m_Name: Level3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &125724
 GameObject:
   m_ObjectHideFlags: 1
@@ -76,23 +76,87 @@ GameObject:
   - 4: {fileID: 468512}
   - 114: {fileID: 11457410}
   m_Layer: 0
-  m_Name: Level1
+  m_Name: Level9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &148672
+--- !u!1 &127374
 GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 406240}
-  - 114: {fileID: 11411858}
+  - 4: {fileID: 491698}
+  - 114: {fileID: 11431600}
+  m_Layer: 0
+  m_Name: Level7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &145834
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 469434}
+  - 114: {fileID: 11415940}
+  m_Layer: 0
+  m_Name: Level8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &163044
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 426422}
+  - 114: {fileID: 11429340}
+  m_Layer: 0
+  m_Name: Level3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &166938
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 499620}
+  - 114: {fileID: 11422258}
   m_Layer: 0
   m_Name: Level2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &172240
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 471618}
+  - 114: {fileID: 11476544}
+  m_Layer: 0
+  m_Name: Level5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +178,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &177204
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 465648}
+  - 114: {fileID: 11417776}
+  m_Layer: 0
+  m_Name: Level6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &181132
 GameObject:
   m_ObjectHideFlags: 1
@@ -124,7 +204,23 @@ GameObject:
   - 4: {fileID: 404892}
   - 114: {fileID: 11427192}
   m_Layer: 0
-  m_Name: Town
+  m_Name: End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &182236
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 449528}
+  - 114: {fileID: 11446706}
+  m_Layer: 0
+  m_Name: Level4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,6 +242,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &196076
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 449608}
+  - 114: {fileID: 11432222}
+  m_Layer: 0
+  m_Name: Town
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &404892
 Transform:
   m_ObjectHideFlags: 1
@@ -157,19 +269,31 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449624}
-  m_RootOrder: 0
---- !u!4 &406240
+  m_RootOrder: 10
+--- !u!4 &413840
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148672}
+  m_GameObject: {fileID: 109058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449624}
-  m_RootOrder: 2
+  m_RootOrder: 1
+--- !u!4 &426422
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 3
 --- !u!4 &436388
 Transform:
   m_ObjectHideFlags: 1
@@ -182,18 +306,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471148}
   m_RootOrder: 3
---- !u!4 &447412
+--- !u!4 &449528
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124786}
+  m_GameObject: {fileID: 182236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449624}
-  m_RootOrder: 3
+  m_RootOrder: 4
+--- !u!4 &449608
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 0
 --- !u!4 &449624
 Transform:
   m_ObjectHideFlags: 1
@@ -204,12 +340,31 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 404892}
+  - {fileID: 449608}
+  - {fileID: 413840}
+  - {fileID: 499620}
+  - {fileID: 426422}
+  - {fileID: 449528}
+  - {fileID: 471618}
+  - {fileID: 465648}
+  - {fileID: 491698}
+  - {fileID: 469434}
   - {fileID: 468512}
-  - {fileID: 406240}
-  - {fileID: 447412}
+  - {fileID: 404892}
   m_Father: {fileID: 471148}
   m_RootOrder: 1
+--- !u!4 &465648
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 6
 --- !u!4 &468512
 Transform:
   m_ObjectHideFlags: 1
@@ -221,7 +376,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449624}
-  m_RootOrder: 1
+  m_RootOrder: 9
+--- !u!4 &469434
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 8
 --- !u!4 &471148
 Transform:
   m_ObjectHideFlags: 1
@@ -229,7 +396,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10000, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494760}
@@ -238,6 +405,18 @@ Transform:
   - {fileID: 436388}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &471618
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172240}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 5
 --- !u!4 &479728
 Transform:
   m_ObjectHideFlags: 1
@@ -250,6 +429,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471148}
   m_RootOrder: 2
+--- !u!4 &491698
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 7
 --- !u!4 &494760
 Transform:
   m_ObjectHideFlags: 1
@@ -262,6 +453,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471148}
   m_RootOrder: 0
+--- !u!4 &499620
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166938}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449624}
+  m_RootOrder: 2
 --- !u!82 &8263128
 AudioSource:
   m_ObjectHideFlags: 1
@@ -350,12 +553,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Main
   Tracks: []
---- !u!114 &11411858
+--- !u!114 &11415940
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148672}
+  m_GameObject: {fileID: 145834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 8
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 20
+  MinBlocks: 20
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
+--- !u!114 &11417776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 6
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 20
+  MinBlocks: 20
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
+--- !u!114 &11422258
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166938}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
@@ -365,17 +610,80 @@ MonoBehaviour:
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 1000
+  Blocks: 20
   MinBlocks: 20
-  EntityTypes: []
-  MaxEntityQty: 
-  MinEntityQty: 
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
 --- !u!114 &11427192
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 10
+  LevelFile: end-game
+  Name: Level 10
+  Type: 1
+  Blocks: 0
+  MinBlocks: 0
+  EntityTypes: []
+  MaxEntityQty: 
+  MinEntityQty: 
+--- !u!114 &11429340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 3
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 20
+  MinBlocks: 20
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
+--- !u!114 &11431600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 7
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 20
+  MinBlocks: 20
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
+--- !u!114 &11432222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196076}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
@@ -411,7 +719,29 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 129840, guid: 54082fa078a7c2940944a58cbec3f15e, type: 2}
   PlayerGUIPrefab: {fileID: 100798, guid: 31e407a545ce40949b5df98a90f313dd, type: 2}
   GoingDown: 0
+  StartingGold: 1000
   MaxItemsPerBlock: 5
+--- !u!114 &11446706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 4
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 20
+  MinBlocks: 20
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
 --- !u!114 &11454536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -435,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 1
+  Level: 9
   LevelFile: 
   Name: Town
   Type: 0
@@ -459,26 +789,27 @@ MonoBehaviour:
   Mixer: {fileID: 24100000, guid: 4e4e4a9911c73394daa6eb859448f009, type: 2}
   MusicSource: {fileID: 8263128}
   StartPlayList: Main
---- !u!114 &11479378
+--- !u!114 &11476544
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 124786}
+  m_GameObject: {fileID: 172240}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 3
+  Level: 5
   LevelFile: 
   Name: Town
   Type: 0
-  Blocks: 1000
+  Blocks: 20
   MinBlocks: 20
-  EntityTypes: []
-  MaxEntityQty: 
-  MinEntityQty: 
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
 --- !u!114 &11484094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -500,6 +831,7 @@ MonoBehaviour:
   HPModifier: 1
   HPRechargeRate: 0
   DirtyData: 0
+  LowestLevelVisited: 0
 --- !u!114 &11491008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -538,6 +870,27 @@ MonoBehaviour:
   - 1
   - 1.2
   - 2
+--- !u!114 &11499176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8125b7359872cf34b884ff1d50c29eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  LevelFile: 
+  Name: Town
+  Type: 0
+  Blocks: 20
+  MinBlocks: 20
+  EntityTypes:
+  - {fileID: 161616, guid: 6e82a8c842f800042b20fb594575eed3, type: 2}
+  MaxEntityQty: 0a000000
+  MinEntityQty: 05000000
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

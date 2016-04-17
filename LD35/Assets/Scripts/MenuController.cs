@@ -13,6 +13,8 @@ public class MenuController : MonoBehaviour
     public string NewGameLevel = "";
     public bool HideExitInEditor = false;
 
+    private LevelLoader _levelloader;
+
     void Start()
     {
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer ||
@@ -21,6 +23,8 @@ public class MenuController : MonoBehaviour
         {
             ExitButton.SetActive(false);
         }
+
+        _levelloader = GlobalController.Instance.GetComponentInChildren<LevelLoader>();
     }
 
     public void OnNewGame()
@@ -29,7 +33,8 @@ public class MenuController : MonoBehaviour
         if (ExitConfirmationObject.activeInHierarchy)
             return;
 
-        SceneManager.LoadScene(NewGameLevel);
+        _levelloader.ResetPlayer();
+        _levelloader.CreateLevel(0);
     }
 
     public void OnHowToPlay()

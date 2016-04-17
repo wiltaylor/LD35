@@ -15,6 +15,7 @@ public class LevelLoader : MonoBehaviour
     public GameObject PlayerPrefab;
     public GameObject PlayerGUIPrefab;
     public bool GoingDown;
+    public int StartingGold = 1000;
 
     public int MaxItemsPerBlock = 5;
 
@@ -47,6 +48,15 @@ public class LevelLoader : MonoBehaviour
         CreateLevel(0);
     }
 
+    public void ResetPlayer()
+    {
+        _playerPersistData.DamageRank = 0;
+        _playerPersistData.HPRank = 0;
+        _playerPersistData.SpeedRank = 0;
+
+        _playerPersistData.Gold = StartingGold;
+    }
+
     public void OnLevelWasLoaded(int level)
     {
         if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "Credits")
@@ -58,9 +68,6 @@ public class LevelLoader : MonoBehaviour
     public void Start()
     {
         _playerPersistData = GlobalController.Instance.GetComponentInChildren<PlayerPersistData>();
-             
-        GoingDown = true;
-        CreateLevel(CurrentLevel);
     }
 
     private void SpawnPlayer(Vector3 position)
@@ -142,7 +149,7 @@ public class LevelLoader : MonoBehaviour
                         blocks = RandomLevel(l);
                     }
 
-                    SpawnPlayer(GoingDown ? _entryStartPosition : _exitStartPosition);
+                    SpawnPlayer(_entryStartPosition);
 
                     return;
                 }
