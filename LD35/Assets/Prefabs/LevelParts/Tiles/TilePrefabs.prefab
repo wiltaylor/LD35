@@ -48,6 +48,10 @@ MonoBehaviour:
   WallDownLeftTile: {fileID: 194192, guid: de5fc3a9e3660a848b2bc074e14ae17f, type: 2}
   WallUpRightTile: {fileID: 152928, guid: 8053e52ec3a264b4298e1a2e5356816c, type: 2}
   WallUpLeftTile: {fileID: 138296, guid: 408d4e25fa9d61a4b95c6dd2ec1c1c27, type: 2}
+  WallCornerUpLeft: {fileID: 134558, guid: d1f4cc43511745c49a70f9e33a7b9513, type: 2}
+  WallCornerUpRight: {fileID: 191700, guid: e678c58c178357c42befcd1dcbaa1510, type: 2}
+  WallCornerDownLeft: {fileID: 100646, guid: d2657c5618406ee42a81df405e887dff, type: 2}
+  WallCornerDownRight: {fileID: 155958, guid: 676e33cb7dfaf9d49a7a828afb4e02f7, type: 2}
   StairsUp: {fileID: 190492, guid: bd694c2dd3393f14db1c03dd690b9535, type: 2}
   StairsDown: {fileID: 171250, guid: 1cb9c4c7436edf7488db60fa71eb27a7, type: 2}
 --- !u!1001 &100100000

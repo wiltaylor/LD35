@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/DebugLoader.unity
+  - enabled: 1
     path: Assets/Scenes/level-town.unity
   - enabled: 1
     path: Assets/Scenes/Blank.unity

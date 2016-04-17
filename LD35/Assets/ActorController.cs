@@ -12,8 +12,20 @@ public class ActorController : MonoBehaviour
     public bool IsPlayer;
     public int XPOnKill;
 
+    public int Direction;
+    public float Speed;
+
+    private Animator _animator;
+
+    public void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
+
     public void Update()
     {
+        Debug.Log(string.Format("Speed: {0} Direction: {1}", Speed, Direction));
+
         if (HP <= 0)
         {
             if (!IsPlayer)
@@ -21,7 +33,6 @@ public class ActorController : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
-                
         }
 
         HP += HPRegenRate * Time.deltaTime;
@@ -32,6 +43,16 @@ public class ActorController : MonoBehaviour
 
         if (Mana > MaxMana)
             Mana = MaxMana;
+
+
+        if (_animator == null)
+            return;
+
+
+        
+
+        _animator.SetFloat("Speed", Speed);
+        _animator.SetInteger("Direction", Direction);
     }
 
     public void OnDMG(int dmg)

@@ -8,6 +8,11 @@ public class LevelBlockController : MonoBehaviour
     public bool Left;
     public bool Right;
     public bool Down;
+    public bool CornerBL;
+    public bool CornerBR;
+    public bool CornerTL;
+    public bool CornerTR;
+
 
     public int BlocksPerAxis = 5;
     public float BlockUnits = 0.3f;
@@ -37,7 +42,17 @@ public class LevelBlockController : MonoBehaviour
                 if (y == BlocksPerAxis - 1 && Up && x == BlocksPerAxis - 1 && Right)
                     tileType = Prefabs.WallUpRightTile;
 
-                
+                if(x == 0 && y == 0 && CornerBL)
+                    tileType = Prefabs.WallCornerDownLeft;
+
+                if(x == 0 & y == BlocksPerAxis - 1 && CornerTL)
+                    tileType = Prefabs.WallCornerUpLeft;
+
+                if(x == BlocksPerAxis - 1 && y == 0 && CornerBR)
+                    tileType = Prefabs.WallCornerDownRight;
+
+                if (x == BlocksPerAxis - 1 && y == BlocksPerAxis - 1 && CornerTR)
+                    tileType = Prefabs.WallCornerUpRight;
 
                 var obj = Instantiate(tileType);
 

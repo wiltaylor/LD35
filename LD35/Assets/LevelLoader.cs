@@ -31,6 +31,10 @@ public class LevelLoader : MonoBehaviour
         public bool Down;
         public bool Left;
         public bool Right;
+        public bool CornerUPLeft;
+        public bool CornerUPRight;
+        public bool CornerDownLeft;
+        public bool CornerDownRight;
         public List<GameObject> ObjectToPlace;
     }
 
@@ -278,7 +282,23 @@ public class LevelLoader : MonoBehaviour
 
                 if (!levelmatrix[x, y].Up && !levelmatrix[x, y].Down && !levelmatrix[x, y].Left && !levelmatrix[x, y].Right)
                     levelmatrix[x, y].RoomSet = false;
+
+                if (!levelmatrix[x, y].RoomSet)
+                    continue;
+
+                if (levelmatrix[x, y].Down && levelmatrix[x, y].Left && x != 0 && !levelmatrix[x - 1, y].Down && y != 0 && !levelmatrix[x, y - 1].Left)
+                    levelmatrix[x, y].CornerDownLeft = true;
+
+                if (levelmatrix[x, y].Up && levelmatrix[x, y].Left && x != 0 && !levelmatrix[x - 1, y].Up && y != MaxRoomAxis - 1 && !levelmatrix[x, y + 1].Left)
+                    levelmatrix[x, y].CornerUPLeft = true;
+
+                if (levelmatrix[x, y].Down && levelmatrix[x, y].Right && x != MaxRoomAxis - 1 && !levelmatrix[x + 1, y].Down && y != 0 && !levelmatrix[x, y - 1].Right)
+                    levelmatrix[x, y].CornerDownRight = true;
+
+                if (levelmatrix[x, y].Up && levelmatrix[x, y].Right && x != MaxRoomAxis - 1 && !levelmatrix[x + 1, y].Up && y != MaxRoomAxis - 1 && !levelmatrix[x, y + 1].Right)
+                    levelmatrix[x, y].CornerUPRight = true;
             }
+
         }
 
         itemslots = placedblocks * MaxItemsPerBlock;
@@ -327,6 +347,10 @@ public class LevelLoader : MonoBehaviour
                     controller.Up = !levelmatrix[x, y].Up;
                     controller.Left = !levelmatrix[x, y].Left;
                     controller.Right = !levelmatrix[x, y].Right;
+                    controller.CornerBL = levelmatrix[x, y].CornerDownLeft;
+                    controller.CornerBR = levelmatrix[x, y].CornerDownRight;
+                    controller.CornerTL = levelmatrix[x, y].CornerUPLeft;
+                    controller.CornerTR = levelmatrix[x, y].CornerUPRight;
                     controller.Prefabs = Prefabs;
                     controller.TileSet = TileSet;
 
